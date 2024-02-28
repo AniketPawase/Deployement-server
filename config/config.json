@@ -1,4 +1,5 @@
 {
+  
   "development": {
     "username": "root",
     "password": "manager",
@@ -20,7 +21,6 @@
     "host": "btyfhkxllcmn96rlzmog-mysql.services.clever-cloud.com",
     "dialect": "mysql",
     "port":3306,
-    "dialectModule": "mysql2",
     "connectionURL":"mysql://uf48ztc4icp5gs65:lJqCbigCKrImDaDygTaQ@btyfhkxllcmn96rlzmog-mysql.services.clever-cloud.com:3306/btyfhkxllcmn96rlzmog"
   }
 }
