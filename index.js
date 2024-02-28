@@ -5,7 +5,11 @@ const cors = require ('cors');
 const db = require('./models')
 
 app.use(express.json());
-app.use(cors()); // to parse the incoming requests with JSON payloads
+app.use(cors({
+    origin:["https://deploy-mern-1whq.vercel.app"],
+    methods:[ 'GET', 'POST', 'PUT', 'DELETE'], 
+    credentials: true
+})); // to parse the incoming requests with JSON payloads
 
 //ROUTERS
 const postRouter = require('./routes/Posts')
