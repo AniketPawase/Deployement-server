@@ -6,11 +6,18 @@ const mysql2 = require('mysql2')
 const db = require('./models')
 
 app.use(express.json());
-app.use(cors({
-    origin:["https://deploy-mern-1whq.vercel.app"],
-    methods:[ 'GET', 'POST', 'PUT', 'DELETE'], 
-    credentials: true
-})); // to parse the incoming requests with JSON payloads
+// app.use(cors({
+//     origin:["https://deploy-mern-1whq.vercel.app"],
+//     methods:[ 'GET', 'POST', 'PUT', 'DELETE'], 
+//     credentials: true
+// })); // to parse the incoming requests with JSON payloads
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
 
 //ROUTERS
 const postRouter = require('./routes/Posts')
